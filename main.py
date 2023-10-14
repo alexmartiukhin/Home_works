@@ -15,14 +15,34 @@
 # Написати рекурсивну функцію, яка виводить N зірок у ряд, число N задає користувач.
 # Проілюструйте роботу функції прикладом. (Протестувати)
 
-def my_row(N):
-    if N <= 0:
-        return N
-    print('*', end='')
+# def my_row(N):
+#     if N <= 0:
+#         return N
+#     print('*', end='')
+#
+#     return my_row(N - 1)
+#
+#
+# N = int(input("Enter stars quantity(N): "))
+#
+# my_row(N)
 
-    return my_row(N - 1)
+
+# Завдання 3.
+#
+# Написати рекурсивну функцію, яка обчислює суму всіх чисел у діапазоні від a до b.
+#
+# Користувач вводить a та b. Проілюструйте роботу функції прикладом.
+
+def sum_range(a, b):
+    if a > b:
+        return 0
+    return a + sum_range(a + 1, b)
 
 
-N = int(input("Enter stars quantity(N): "))
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
 
-my_row(N)
+result = sum_range(a, b)
+
+print(result)
